@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RealityCheck – Time Management</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>⏱ RealityCheck</h1>
+<p class="tagline">Plan time. Face reality.</p>
+
+<div class="task-input">
+<input type="text" id="taskName" placeholder="Task name">
+<input type="number" id="plannedTime" placeholder="Planned time (minutes)">
+<button onclick="addTask()">Add Task</button>
+</div>
+
+<h2>🔥 Daily Productivity Score: <span id="score">0</span>%</h2>
+<p id="motivationMessage" class="motivation"></p>
+
+<h3>🏆 Level: <span id="level">1</span> | XP: <span id="xp">0</span></h3>
+<h3>🔥 Streak: <span id="streak">0</span> days</h3>
+
+<div class="date-controls">
+<input type="date" id="dateSelect">
+<button onclick="goToday()">📅 Today</button>
+</div>
+
+<ul id="taskList"></ul>
+
+<div id="breakPopup" class="popup" style="display:none">
+<h3>🎉 Break Time Earned!</h3>
+<p id="breakText"></p>
+<h2 id="breakTimer"></h2>
+<button onclick="closeBreak()">Close</button>
+</div>
+
+<div class="weeklySummary">
+<h3>📅 Weekly Summary</h3>
+<p id="weeklyAvg"></p>
+<p id="weeklyTasks"></p>
+<p id="weeklyDistractions"></p>
+</div>
+
+<h2>📊 Daily Report</h2>
+<canvas id="reportChart"></canvas>
+
+<h2>📈 Productivity Trend</h2>
+<canvas id="trendChart"></canvas>
+
+</div>
+<div id="tabSwitchPrompt" class="popup" style="display:none">
+<h3>⚠ Tab Switch Detected</h3>
+<p>Was this tab switch productive?</p>
+
+<button onclick="markProductive()">Yes (Productive)</button>
+<button onclick="markUnproductive()">No (Distraction)</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
